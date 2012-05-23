@@ -1,0 +1,50 @@
+/**
+ *\file glwidget.h
+ *\author Jean-Mathieu CHANTREIN
+ *\author Gaetan PICOT
+ *\version 2.0 Copyright CC-BY-NC-SA (Creative Commons) https://fr.wikipedia.org/wiki/Licence_Creative_Commons
+ */
+
+#ifndef GLWIDGET_H
+#define GLWIDGET_H
+
+#include <QtOpenGL>
+#include <QGLWidget>
+#include "GL/gl.h"
+
+/**
+ *\class GLWidget
+ *\brief Abstraite.Gere la modelisation et l'interaction avec la souris des scènes.Herite de QGLWidget http://qt-project.org/doc/qt-4.8/QGLWidget.html
+ */
+class GLWidget : public QGLWidget
+{
+    Q_OBJECT
+protected:
+    GLfloat rotationX;
+    GLfloat rotationY;
+    GLfloat rotationZ;
+    QPoint lastPos;
+    
+    bool m_depthMask;
+public:
+    GLWidget(QWidget *parent = 0);
+    /**
+      * \fn virtual void draw()=0;
+      * \brief Dessine entierement la scene
+      */
+    virtual void draw()=0;
+protected:
+    void initializeGL();
+    void resizeGL(int width, int height);
+    void paintGL();
+    void mousePressEvent(QMouseEvent *event);
+    void mouseMoveEvent(QMouseEvent *event);
+
+    void depthMask();
+
+    protected slots:
+      void switchDepthMask(bool);
+    void update();
+};
+
+#endif
