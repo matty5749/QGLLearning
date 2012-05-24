@@ -2,3 +2,4 @@ build/*
 .kdev4/*
 QGLLearning.kdev4
 doxygen/html/*
+src/*.*~
