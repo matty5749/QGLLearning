@@ -8,6 +8,9 @@
 #include <QSplitter>
 #include <QVBoxLayout>
 #include <QScrollArea>
+#include "qglclearcolor.h"
+#include "color4f.h"
+#include "glwidget.h"
 
 Learning::Learning(QWidget* parent): QWidget(parent)
 {
@@ -25,4 +28,10 @@ Learning::Learning(QWidget* parent): QWidget(parent)
     m_splitter->addWidget(m_blocCode);
 
     m_vBox=new QVBoxLayout(m_conteneur);
+    
+    m_qGLClearColor=new QGLClearColor;
+    m_vBox->addWidget(m_qGLClearColor);
+    
+    connect(m_qGLClearColor,SIGNAL(color(Color4f*)),this,SLOT(backgroungColorChanged(Color4f*)));
 }
+
