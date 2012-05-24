@@ -12,6 +12,7 @@
 
 QGLClearColor::QGLClearColor(Color4f* color, QWidget* parent): QGLFunction4f(parent), m_color(color)
 {
+  if (m_color==0) m_color=new Color4f(0,0,0,0);
     m_nameFunction->setText("glClearColor(");
 
     m_spin1->setRange(0,99);

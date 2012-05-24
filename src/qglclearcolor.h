@@ -21,6 +21,7 @@ private:
     Color4f* m_color;
 public:
     QGLClearColor(Color4f* color=0 , QWidget* parent = 0);
+
 };
 
 #endif // QGLCLEARCOLOR_H
