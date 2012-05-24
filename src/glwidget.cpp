@@ -5,15 +5,14 @@
  *\version 2.0 Copyright CC-BY-NC-SA (Creative Commons) https://fr.wikipedia.org/wiki/Licence_Creative_Commons
  */
 #include "glwidget.h"
+#include "color4f.h"
 /**
  * \fn GLWidget::GLWidget ( QWidget *parent )
  * \brief Construit la base des modelisations à venir en sous classes
  */
 GLWidget::GLWidget ( QWidget *parent ) : QGLWidget ( parent ),rotationX ( 0 ),rotationY ( 0 ),rotationZ ( 0 ),m_depthMask(true)
-/** TODO: VOIR POUR SUPRESSION ,m_cullFace ( true ),m_depthTest ( false ),m_blend ( true )
-        ,m_srcBlendFunc ( GL_SRC_ALPHA ) , m_dstBlendFunc ( GL_ONE_MINUS_SRC_ALPHA ), m_blendEquation ( GL_FUNC_ADD )
-        */
 {
+    m_backgroundColor=new Color4f(0,0,0,0);
     setSizePolicy ( QSizePolicy::Minimum,QSizePolicy::Minimum );
     setMinimumSize ( topLevelWidget()->width(),topLevelWidget()->height() );
     setFormat ( QGLFormat ( QGL::DoubleBuffer | QGL::DepthBuffer ) );
@@ -25,7 +24,7 @@ GLWidget::GLWidget ( QWidget *parent ) : QGLWidget ( parent ),rotationX ( 0 ),ro
  */
 void GLWidget::initializeGL()
 {
-    glClearColor ( 0.0,0.0,0.0,0.0 );
+    //glClearColor ( 0.0,0.0,0.0,0.0 );
     glShadeModel ( GL_FLAT );
     glEnable ( GL_DEPTH_TEST );
 }
@@ -51,6 +50,7 @@ void GLWidget::resizeGL ( int width, int height )
 void GLWidget::paintGL()
 {
     glClear ( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+    clearColor();
     draw();
 }
 
@@ -95,6 +95,16 @@ void GLWidget::depthMask()
 if ( m_depthMask ) glDepthMask(GL_TRUE);
     else glDepthMask(GL_FALSE);
 }
+
+/**
+ * \fn void GLWidget::clearColor()
+ * \brief Appel de la fonction  glClearColor()
+ */
+void GLWidget::clearColor()
+{
+ glClearColor(m_backgroundColor->getR(),m_backgroundColor->getG(),m_backgroundColor->getB(),m_backgroundColor->getA());
+}
+
 
 /**
  * \fn void GLWidget::switchDepthMask(bool flag)

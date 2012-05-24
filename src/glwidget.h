@@ -12,6 +12,7 @@
 #include <QGLWidget>
 #include "GL/gl.h"
 
+class Color4f;
 /**
  *\class GLWidget
  *\brief Abstraite.Gere la modelisation et l'interaction avec la souris des scènes.Herite de QGLWidget http://qt-project.org/doc/qt-4.8/QGLWidget.html
@@ -26,6 +27,7 @@ protected:
     QPoint lastPos;
     
     bool m_depthMask;
+    Color4f* m_backgroundColor;
 public:
     GLWidget(QWidget *parent = 0);
     /**
@@ -39,12 +41,13 @@ protected:
     void paintGL();
     void mousePressEvent(QMouseEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
-
     void depthMask();
+    void clearColor();
 
     protected slots:
       void switchDepthMask(bool);
-    void update();
-};
+      void update();
+    
+   };
 
 #endif
