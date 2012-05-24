@@ -10,7 +10,7 @@
 #include <QLabel>
 #include <QSpinBox>
 
-QGLClearColor::QGLClearColor(Color4f* color, QWidget* parent): QGlFunction4f(parent), m_color(color)
+QGLClearColor::QGLClearColor(Color4f* color, QWidget* parent): QGLFunction4f(parent), m_color(color)
 {
     m_nameFunction->setText("glClearColor(");
 
