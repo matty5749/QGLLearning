@@ -7,6 +7,7 @@
 #include "learningdoublequadblendinglessparam.h"
 #include <iostream>
 #include "gldoublequadblendinglessparam.h"
+#include "qglclearcolor.h"
 
 /**
  *\fn LearningDoubleQuadBlendingLessParam::LearningDoubleQuadBlendingLessParam(QWidget* parent)
@@ -20,12 +21,17 @@ LearningDoubleQuadBlendingLessParam::LearningDoubleQuadBlendingLessParam (GLDoub
     m_glDoubleQuadBlendingLessParam=new GLDoubleQuadBlendingLessParam;
     m_splitter->addWidget(m_glDoubleQuadBlendingLessParam);
 
+    m_qGLClearColor=new QGLClearColor(m_glDoubleQuadBlendingLessParam->m_backgroundColor);
+    m_vBox->addWidget(m_qGLClearColor);
+    
     m_vBox->addWidget(m_glDoubleQuadBlendingLessParam->m_quad1->getDialogCode());
     m_vBox->addWidget(m_glDoubleQuadBlendingLessParam->m_quad2->getDialogCode());
     m_vBox->addStretch();
 
     m_blocCode->setWidget(m_conteneur);
+    
 
+    connect(m_qGLClearColor,SIGNAL(qGLClearColorChanged()),m_glDoubleQuadBlendingLessParam,SLOT(update()));
     //CONNECTION QUAD
     connect(m_glDoubleQuadBlendingLessParam->m_quad1,SIGNAL(quadChanged()),m_glDoubleQuadBlendingLessParam,SLOT(update()));
     connect(m_glDoubleQuadBlendingLessParam->m_quad2,SIGNAL(quadChanged()),m_glDoubleQuadBlendingLessParam,SLOT(update()));

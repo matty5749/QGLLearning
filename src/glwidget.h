@@ -27,6 +27,11 @@ protected:
     QPoint lastPos;
     
     bool m_depthMask;
+    
+public:
+  /**
+   * \details Tout le monde peut acceder a la couleur de fond, cela n'a aucune incidence , et cela evite l'utilisation systematique de friends
+   */
     Color4f* m_backgroundColor;
 public:
     GLWidget(QWidget *parent = 0);

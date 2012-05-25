@@ -28,10 +28,5 @@ Learning::Learning(QWidget* parent): QWidget(parent)
     m_splitter->addWidget(m_blocCode);
 
     m_vBox=new QVBoxLayout(m_conteneur);
-    
-    m_qGLClearColor=new QGLClearColor;
-    m_vBox->addWidget(m_qGLClearColor);
-    
-    connect(m_qGLClearColor,SIGNAL(color(Color4f*)),this,SLOT(backgroungColorChanged(Color4f*)));
 }
 

@@ -10,7 +10,7 @@
 #include "learning.h"
 
 class GLDoubleQuadBlendingLessParam;
-
+class QGLClearColor;
 /**
  * \class LearningDoubleQuadBlendingLessParam
  * \brief Construit la modelisation GLDoubleQuadBlendingLessParam et gere l'affichage des controlleurs de celle-ci.
@@ -19,6 +19,7 @@ class LearningDoubleQuadBlendingLessParam : public Learning
 {
 private:
     GLDoubleQuadBlendingLessParam* m_glDoubleQuadBlendingLessParam;
+    QGLClearColor* m_qGLClearColor;
 
 public:
     LearningDoubleQuadBlendingLessParam(GLDoubleQuadBlendingLessParam* modelisation = 0 , QWidget* parent = 0);

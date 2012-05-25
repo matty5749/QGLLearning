@@ -7,7 +7,6 @@
 #define LEARNING_H
 
 class GLWidget;
-class QGLClearColor;
 class QSplitter;
 class QHBoxLayout;
 class QScrollArea;
@@ -30,7 +29,6 @@ protected:
     QVBoxLayout* m_vBox;
     QScrollArea* m_blocCode;
     QWidget* m_conteneur;
-    QGLClearColor* m_qGLClearColor;
 public:
     Learning(QWidget* parent = 0);
     virtual QString getName() const = 0 ;

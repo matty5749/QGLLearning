@@ -24,7 +24,6 @@ GLWidget::GLWidget ( QWidget *parent ) : QGLWidget ( parent ),rotationX ( 0 ),ro
  */
 void GLWidget::initializeGL()
 {
-    //glClearColor ( 0.0,0.0,0.0,0.0 );
     glShadeModel ( GL_FLAT );
     glEnable ( GL_DEPTH_TEST );
 }
