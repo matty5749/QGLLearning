@@ -24,6 +24,7 @@ private:
     Quad* m_quad2;
 public:
     GLDoubleQuadBlendingLessParam ( QWidget* parent = 0 );
+    ~GLDoubleQuadBlendingLessParam();
 
 private:
     virtual void draw();

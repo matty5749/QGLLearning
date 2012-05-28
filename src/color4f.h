@@ -27,6 +27,7 @@ private:
     GLfloat m_a;
 public:
     Color4f(GLfloat r, GLfloat g, GLfloat b, GLfloat a);
+    ~Color4f();
     GLfloat getR() const;
     GLfloat getG() const;
     GLfloat getB() const;

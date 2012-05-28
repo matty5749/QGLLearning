@@ -31,6 +31,7 @@ private:
 public:
 
     Cube(Vertex* base, GLfloat size, bool lessParam);
+    ~Cube();
     virtual void drawFigure();
     virtual QDialog* getDialogCode();
     

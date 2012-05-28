@@ -32,6 +32,12 @@ LearningTripleQuadBlendingLessParam::LearningTripleQuadBlendingLessParam(QWidget
     connect(m_glTripleQuadBlendingLessParam->m_quad3,SIGNAL(quadChanged()),m_glTripleQuadBlendingLessParam,SLOT(update()));
 }
 
+LearningTripleQuadBlendingLessParam::~LearningTripleQuadBlendingLessParam()
+{
+  delete m_glTripleQuadBlendingLessParam;
+}
+
+
 QString LearningTripleQuadBlendingLessParam::getName() const
 {
     QString name;

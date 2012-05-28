@@ -22,6 +22,7 @@ private:
 
 public:
     LearningTripleQuadBlendingFullParam(QWidget* parent = 0);
+    ~LearningTripleQuadBlendingFullParam();
     virtual QString getName() const;
 };
 

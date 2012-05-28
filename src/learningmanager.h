@@ -42,6 +42,7 @@ private:
     QVector<Learning*> m_learningVector;
 public:
     LearningManager(QDockWidget* dockWidget = 0 , QWidget* parent = 0);
+    ~LearningManager();
 
 private slots:
     void changeLearning(int index);

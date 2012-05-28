@@ -18,6 +18,12 @@ GLWidget::GLWidget ( QWidget *parent ) : QGLWidget ( parent ),rotationX ( 0 ),ro
     setFormat ( QGLFormat ( QGL::DoubleBuffer | QGL::DepthBuffer ) );
 }
 
+GLWidget::~GLWidget()
+{
+  delete m_backgroundColor;
+}
+
+
 /**
  * \fn void GLWidget::initializeGL()
  * \brief Initialisation de la scene

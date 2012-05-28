@@ -43,6 +43,7 @@ private:
 
 public:
     Quad ( GLfloat r, GLfloat g, GLfloat b, GLfloat a, Vertex* one, Vertex* two, Vertex* three, Vertex* four, bool depthMaskWidget = false, bool cullFaceWidget = true, bool depthTestWidget = true, bool blendWidget = true );
+    ~Quad();
     virtual void drawFigure();
 
 private:

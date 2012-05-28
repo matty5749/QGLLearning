@@ -91,6 +91,11 @@ Figure::Figure(GLfloat r, GLfloat g, GLfloat b, GLfloat a, bool depthMaskWidget,
     connect(m_color,SIGNAL(colorChanged()),this,SLOT(changeColor()));
 }
 
+Figure::~Figure()
+{
+  delete m_color;
+}
+
 
 /**
  * \fn void Figure::cullFace()

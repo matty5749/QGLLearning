@@ -55,6 +55,15 @@ Quad::Quad(GLfloat r, GLfloat g, GLfloat b, GLfloat a, Vertex* one, Vertex* two,
     connect(m_four,SIGNAL(vertexChanged()),this,SLOT(change()));
 }
 
+Quad::~Quad()
+{
+ if (m_one) delete m_one;
+ if (m_two) delete m_two;
+ if (m_three) delete m_three;
+ if (m_four) delete m_four;
+}
+
+
 void Quad::drawFigure()
 {
     if (!m_noCullFace) cullFace();

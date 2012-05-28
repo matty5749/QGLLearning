@@ -33,3 +33,8 @@ QGLColor4f::QGLColor4f(Color4f* color , QWidget* parent): QGLFunction4f(parent),
     connect(m_spin3,SIGNAL(valueChanged(int)),m_color,SLOT(changeB(int)));
     connect(m_spin4,SIGNAL(valueChanged(int)),m_color,SLOT(changeA(int)));
 }
+
+QGLColor4f::~QGLColor4f()
+{
+  if (m_color) delete m_color;
+}

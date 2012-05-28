@@ -49,6 +49,16 @@ Cube::Cube(Vertex* base, GLfloat size, bool lessParam):Figure(1,1,1,1)
     }
 }
 
+Cube::~Cube()
+{
+ delete m_front;
+ delete m_back;
+ delete m_down;
+ delete m_left;
+ delete m_right;
+ delete m_up;
+}
+
 void Cube::drawFigure()
 {
     //MODELISATION

@@ -12,7 +12,14 @@ SwitchWidget::SwitchWidget(bool flag,QWidget* parent): QWidget(parent),m_flag(fl
     m_height=20;
     m_width=40;
     setMinimumSize(m_width+1,m_height+1);
+    m_pixmap=0;
 }
+
+SwitchWidget::~SwitchWidget()
+{
+  delete m_pixmap;
+}
+
 /**
  * \fn void SwitchWidget::drawSwitch()
  * \brief dessine l'interrupteur suivant sont etat ON/OFF
@@ -83,10 +90,16 @@ void SwitchWidget::resizeEvent(QResizeEvent* event)
 {
     m_width=width()-1;
     m_height=height()-1;
-    QPixmap* temp=new QPixmap(size());//temp est un QPixmap qui est de la taille du widget redimenssioné
-    m_pixmap=temp;
+    if (m_pixmap==0)
+    {
+      m_pixmap=new QPixmap(size());
+    }
+    else
+    {
+      QPixmap temp(size());//temp est un QPixmap qui est de la taille du widget redimenssioné
+      QPainter painter(m_pixmap);
+      painter.drawPixmap(0,0,temp);
+    }
 
     drawSwitch();
-
-    update();
 }

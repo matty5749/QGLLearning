@@ -64,6 +64,7 @@ protected:
 
 public:
     Figure(GLfloat r, GLfloat g, GLfloat b, GLfloat a, bool depthMaskWidget = false, bool cullFaceWidget = true, bool depthTestWidget = true, bool blendWidget = true);
+    ~Figure();
     /**
      * \fn virtual void drawFigure()=0;
      * \brief Methode a definir dans les sous classes de Figure.Permet de dessiner la figure.

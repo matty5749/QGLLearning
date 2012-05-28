@@ -39,6 +39,12 @@ LearningCubeBlendingLessParam::LearningCubeBlendingLessParam (GLCubeBlendingLess
     connect(m_glCubeBlendingLessParam->m_cube->m_down,SIGNAL(quadChanged()),m_glCubeBlendingLessParam,SLOT(update()));
 }
 
+LearningCubeBlendingLessParam::~LearningCubeBlendingLessParam()
+{
+ delete m_glCubeBlendingLessParam;
+}
+
+
 QString LearningCubeBlendingLessParam::getName() const
 {
     QString name;

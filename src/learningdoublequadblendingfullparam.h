@@ -22,6 +22,7 @@ private:
 
 public:
     LearningDoubleQuadBlendingFullParam(GLDoubleQuadBlendingFullParam* modelisation = 0 , QWidget* parent = 0);
+    ~LearningDoubleQuadBlendingFullParam();
     virtual QString getName() const;
 };
 

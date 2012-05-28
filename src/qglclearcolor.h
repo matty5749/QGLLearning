@@ -22,6 +22,7 @@ private:
     Color4f* m_color;
 public:
     QGLClearColor(Color4f* color=0 , QWidget* parent = 0);
+    ~QGLClearColor();
 protected slots:
   void changeBackgroungColor();
 signals:

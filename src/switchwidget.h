@@ -25,6 +25,7 @@ private:
     int m_lastPos;
 public:
     SwitchWidget(bool flag=true , QWidget* parent=0);
+    ~SwitchWidget();
     void drawSwitch();
 
 protected:

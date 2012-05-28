@@ -59,6 +59,15 @@ LearningManager::LearningManager(QDockWidget* dockWidget , QWidget* parent): QWi
     connect (m_learningChoiceWidget,SIGNAL(learningChanged(int)),this,SLOT(changeLearning(int)));
 }
 
+LearningManager::~LearningManager()
+{
+    for (QVector<Learning*>::iterator it=m_learningVector.begin();it!=m_learningVector.end();it++)
+    {
+        delete (*it);
+    }
+}
+
+
 /**
  * \fn void LearningManager::changeLearning(int index)
  * \brief Permet de changer de theme lorsque l'utilisateur double clic sur l'un d'entre eux dans le QDockWidget

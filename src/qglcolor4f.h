@@ -20,6 +20,7 @@ private:
     Color4f* m_color;
 public:
     QGLColor4f(Color4f* color=0 , QWidget* parent = 0);
+    ~QGLColor4f();
 };
 
 #endif // QGLCOLOR4F_H
