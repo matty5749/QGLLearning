@@ -94,6 +94,7 @@ Figure::Figure(GLfloat r, GLfloat g, GLfloat b, GLfloat a, bool depthMaskWidget,
 Figure::~Figure()
 {
   delete m_color;
+  m_color=NULL;
 }
 
 

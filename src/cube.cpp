@@ -20,37 +20,47 @@
  */
 Cube::Cube(Vertex* base, GLfloat size, bool lessParam):Figure(1,1,1,1)
 {
-    Vertex *one = new Vertex(base->getX(), base->getY(), base->getZ());
-    Vertex *two = new Vertex(base->getX() + size, base->getY(), base->getZ());
-    Vertex *three = new Vertex(base->getX() + size, base->getY() + size, base->getZ());
-    Vertex *four = new Vertex(base->getX(), base->getY() + size , base->getZ());
-    Vertex *five = new Vertex(base->getX(), base->getY(), base->getZ() - size);
-    Vertex *six = new Vertex(base->getX(), base->getY() + size, base->getZ() - size);
-    Vertex *seven = new Vertex(base->getX() + size, base->getY() + size, base->getZ() - size);
-    Vertex *eight = new Vertex(base->getX() + size, base->getY(), base->getZ() - size);
+    m_one = new Vertex(base->getX(), base->getY(), base->getZ());
+    m_two = new Vertex(base->getX() + size, base->getY(), base->getZ());
+    m_three = new Vertex(base->getX() + size, base->getY() + size, base->getZ());
+    m_four = new Vertex(base->getX(), base->getY() + size , base->getZ());
+    m_five = new Vertex(base->getX(), base->getY(), base->getZ() - size);
+    m_six = new Vertex(base->getX(), base->getY() + size, base->getZ() - size);
+    m_seven = new Vertex(base->getX() + size, base->getY() + size, base->getZ() - size);
+    m_eight = new Vertex(base->getX() + size, base->getY(), base->getZ() - size);
 
     if (lessParam)
     {
-        m_front = new Quad(0.8,0.4,0.2,1.0, one, two, three, four, true);
-        m_back = new Quad(0.2,0.4,0.8,0.5, five, six, seven, eight, false, false, false, false);
-        m_left = new Quad(0.8,0.2,0.4,0.5, one, four, six ,five, false, false, false, false);
-        m_right = new Quad(0.2,0.8,0.4,0.5, two, eight, seven, three, false, false, false, false);
-        m_up = new Quad(1,0.0,0.0,0.5, four, three, seven, six, false, false, false, false);
-        m_down = new Quad(1,1,0.0,0.5, one, five, eight, two, false, false, false, false);
+        m_front = new Quad(0.8,0.4,0.2,1.0, m_one, m_two, m_three, m_four, true);
+        m_back = new Quad(0.2,0.4,0.8,0.5, m_five, m_six, m_seven, m_eight, false, false, false, false);
+        m_left = new Quad(0.8,0.2,0.4,0.5, m_one, m_four, m_six ,m_five, false, false, false, false);
+        m_right = new Quad(0.2,0.8,0.4,0.5, m_two, m_eight, m_seven, m_three, false, false, false, false);
+        m_up = new Quad(1,0.0,0.0,0.5, m_four, m_three, m_seven, m_six, false, false, false, false);
+        m_down = new Quad(1,1,0.0,0.5, m_one, m_five, m_eight, m_two, false, false, false, false);
     }
     else
     {
-        m_front = new Quad(0.8,0.4,0.2,1.0, one, two, three, four, true);
-        m_back = new Quad(0.2,0.4,0.8,0.5, five, six, seven, eight, true);
-        m_left = new Quad(0.8,0.2,0.4,0.5, one, four, six ,five, true);
-        m_right = new Quad(0.2,0.8,0.4,0.5, two, eight, seven, three, true);
-        m_up = new Quad(1,0.0,0.0,0.5, four, three, seven, six, true);
-        m_down = new Quad(1,1,0.0,0.5, one, five, eight, two, true);
+        m_front = new Quad(0.8,0.4,0.2,1.0, m_one, m_two, m_three, m_four, true);
+        m_back = new Quad(0.2,0.4,0.8,0.5, m_five, m_six, m_seven, m_eight, true);
+        m_left = new Quad(0.8,0.2,0.4,0.5, m_one, m_four, m_six ,m_five, true);
+        m_right = new Quad(0.2,0.8,0.4,0.5, m_two, m_eight, m_seven, m_three, true);
+        m_up = new Quad(1,0.0,0.0,0.5, m_four, m_three, m_seven, m_six, true);
+        m_down = new Quad(1,1,0.0,0.5, m_one, m_five, m_eight, m_two, true);
     }
 }
 
 Cube::~Cube()
 {
+ /*On detruit les vertex ici afin d'eviter de vouloir detruire plusieurs fois le meme objet , ce qui est le cas ici , un sommet est concerné par 3 Quad */ 
+ delete m_one;m_one=NULL;
+ delete m_two;m_two=NULL;
+ delete m_three;m_three=NULL;
+ delete m_four;m_four=NULL;
+ delete m_five;m_five=NULL;
+ delete m_six;m_six=NULL;
+ delete m_seven;m_seven=NULL;
+ delete m_eight;m_eight=NULL;
+ 
  delete m_front;
  delete m_back;
  delete m_down;

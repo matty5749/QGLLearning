@@ -39,7 +39,10 @@ QGLClearColor::QGLClearColor(Color4f* color, QWidget* parent): QGLFunction4f(par
 
 QGLClearColor::~QGLClearColor()
 {
-  if (m_color) delete m_color;
+  /*
+  delete m_color;
+  m_color=NULL;
+  */
 }
 
 

@@ -36,5 +36,8 @@ QGLColor4f::QGLColor4f(Color4f* color , QWidget* parent): QGLFunction4f(parent),
 
 QGLColor4f::~QGLColor4f()
 {
-  if (m_color) delete m_color;
+  /*
+  delete m_color;
+  m_color=NULL;
+  */
 }
