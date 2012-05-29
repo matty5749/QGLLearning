@@ -10,6 +10,7 @@
 
 class GLCubeBlendingFullParam;
 class QGLDepthMask;
+class QGLClearColor;
 
 /**
  * \class LearningCubeBlendingFullParam
@@ -20,6 +21,7 @@ class LearningCubeBlendingFullParam : public Learning
 private:
     GLCubeBlendingFullParam* m_glCubeBlendingFullParam;
     QGLDepthMask* m_qGLDepthMask;
+    QGLClearColor* m_qGLClearColor;
 
 public:
     LearningCubeBlendingFullParam(GLCubeBlendingFullParam* modelisation = 0 , QWidget* parent = 0);

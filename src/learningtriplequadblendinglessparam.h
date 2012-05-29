@@ -7,7 +7,7 @@
 #define LEARNINGTRIPLEQUADBLENDINGLESSPARAM_H
 
 #include "learning.h"
-
+class QGLClearColor;
 
 class GLTripleQuadBlendingLessParam;
 
@@ -19,6 +19,7 @@ class LearningTripleQuadBlendingLessParam : public Learning
 {
 private:
     GLTripleQuadBlendingLessParam* m_glTripleQuadBlendingLessParam;
+    QGLClearColor* m_qGLClearColor;
 
 public:
     LearningTripleQuadBlendingLessParam(QWidget* parent = 0);

@@ -9,6 +9,7 @@
 #include "learning.h"
 
 class GLCubeBlendingLessParam;
+class QGLClearColor;
 
 /**
  * \class LearningCubeBlendingLessParam
@@ -18,6 +19,7 @@ class LearningCubeBlendingLessParam : public Learning
 {
 private:
     GLCubeBlendingLessParam* m_glCubeBlendingLessParam;
+    QGLClearColor* m_qGLClearColor;
 
 public:
     LearningCubeBlendingLessParam(GLCubeBlendingLessParam* modelisation = 0 , QWidget* parent = 0);

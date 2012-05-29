@@ -10,6 +10,7 @@
 
 
 class GLTripleQuadBlendingFullParam;
+class QGLClearColor;
 
 /**
  * \class LearningTripleQuadBlendingFullParam
@@ -19,6 +20,7 @@ class LearningTripleQuadBlendingFullParam : public Learning
 {
 private:
     GLTripleQuadBlendingFullParam* m_glTripleQuadBlendingFullParam;
+    QGLClearColor* m_qGLClearColor;
 
 public:
     LearningTripleQuadBlendingFullParam(QWidget* parent = 0);

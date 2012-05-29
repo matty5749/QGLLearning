@@ -10,6 +10,7 @@
 
 class GLDoubleQuadBlendingFullParam;
 class LearningDoubleQuadBlendingFullParam;
+class QGLClearColor;
 
 /**
  * \class LearningDoubleQuadBlendingFullParam
@@ -19,6 +20,7 @@ class LearningDoubleQuadBlendingFullParam : public Learning
 {
 private:
     GLDoubleQuadBlendingFullParam* m_glDoubleQuadBlendingFullParam;
+    QGLClearColor* m_qGLClearColor;
 
 public:
     LearningDoubleQuadBlendingFullParam(GLDoubleQuadBlendingFullParam* modelisation = 0 , QWidget* parent = 0);

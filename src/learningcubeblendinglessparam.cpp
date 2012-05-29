@@ -7,6 +7,7 @@
 #include <iostream>
 #include "glcubeblendinglessparam.h"
 #include "quad.h"
+#include "qglclearcolor.h"
 
 /**
  *\fn LearningCubeBlendingLessParam::LearningCubeBlendingLessParam(QWidget* parent)
@@ -19,7 +20,9 @@ LearningCubeBlendingLessParam::LearningCubeBlendingLessParam (GLCubeBlendingLess
 
     m_glCubeBlendingLessParam=new GLCubeBlendingLessParam;
     m_splitter->addWidget(m_glCubeBlendingLessParam);
-
+  
+    m_qGLClearColor=new QGLClearColor(m_glCubeBlendingLessParam->m_backgroundColor);
+    m_vBox->addWidget(m_qGLClearColor);
     m_vBox->addWidget(m_glCubeBlendingLessParam->m_cube->m_front->getDialogCode());
     m_vBox->addWidget(m_glCubeBlendingLessParam->m_cube->m_back->getDialogCode());
     m_vBox->addWidget(m_glCubeBlendingLessParam->m_cube->m_left->getDialogCode());
@@ -30,6 +33,7 @@ LearningCubeBlendingLessParam::LearningCubeBlendingLessParam (GLCubeBlendingLess
 
     m_blocCode->setWidget(m_conteneur);
 
+     connect(m_qGLClearColor,SIGNAL(qGLClearColorChanged()),m_glCubeBlendingLessParam,SLOT(update()));
     //CONNECTION QUAD
     connect(m_glCubeBlendingLessParam->m_cube->m_front,SIGNAL(quadChanged()),m_glCubeBlendingLessParam,SLOT(update()));
     connect(m_glCubeBlendingLessParam->m_cube->m_back,SIGNAL(quadChanged()),m_glCubeBlendingLessParam,SLOT(update()));

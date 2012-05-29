@@ -10,6 +10,7 @@
 class QDockWidget;
 class QHBoxLayout;
 class Learning;
+class LearningQuadBlending;
 class LearningDoubleQuadBlendingLessParam;
 class LearningDoubleQuadBlendingFullParam;
 class LearningTripleQuadBlendingLessParam;
@@ -31,6 +32,7 @@ private:
     Learning* m_currentLearning;
 
     /* Liste des themes */
+    LearningQuadBlending* m_learningQuadBlending;
     LearningDoubleQuadBlendingLessParam* m_learningDoubleQuadBlendingLessParam;
     LearningDoubleQuadBlendingFullParam* m_learningDoubleQuadBlendingFulParam;
     LearningTripleQuadBlendingLessParam* m_learningTripleQuadBlendingLessParam;
