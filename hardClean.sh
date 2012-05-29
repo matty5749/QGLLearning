@@ -7,6 +7,7 @@
 	rm QGLLearning.kdev4
 	rm -R .kdev4
 	rm src/*.*~
+	rm -R doxygen/html
 	echo ""
 	echo "Fin du nettoyage"
 	echo ""
