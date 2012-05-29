@@ -23,6 +23,7 @@ private:
 
 public:
     LearningCubeBlendingLessParam(GLCubeBlendingLessParam* modelisation = 0 , QWidget* parent = 0);
+    ~LearningCubeBlendingLessParam();
     virtual QString getName() const;
 };
 

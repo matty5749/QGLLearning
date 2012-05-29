@@ -37,6 +37,12 @@ LearningDoubleQuadBlendingLessParam::LearningDoubleQuadBlendingLessParam (GLDoub
     connect(m_glDoubleQuadBlendingLessParam->m_quad2,SIGNAL(quadChanged()),m_glDoubleQuadBlendingLessParam,SLOT(update()));
 }
 
+LearningDoubleQuadBlendingLessParam::~LearningDoubleQuadBlendingLessParam()
+{
+    delete m_glDoubleQuadBlendingLessParam;
+}
+
+
 QString LearningDoubleQuadBlendingLessParam::getName() const
 {
     QString name;

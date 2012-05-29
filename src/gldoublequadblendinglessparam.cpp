@@ -27,6 +27,13 @@ GLDoubleQuadBlendingLessParam::GLDoubleQuadBlendingLessParam(QWidget* parent): G
     m_quad2=new Quad(0.0,1.0,0.0,0.5,five,six,seven,eight,false,false,false,false);
 }
 
+GLDoubleQuadBlendingLessParam::~GLDoubleQuadBlendingLessParam()
+{
+ delete m_quad1;
+ delete m_quad2;
+}
+
+
 void GLDoubleQuadBlendingLessParam::draw()
 {
     glMatrixMode(GL_MODELVIEW);

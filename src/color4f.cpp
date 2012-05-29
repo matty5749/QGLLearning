@@ -10,6 +10,13 @@ Color4f::Color4f ( GLfloat r, GLfloat g, GLfloat b, GLfloat a ) :m_r ( r ),m_g (
 {
 
 }
+
+Color4f::~Color4f()
+{
+
+}
+
+
 /**
  * \return Proportion de rouge.
  */

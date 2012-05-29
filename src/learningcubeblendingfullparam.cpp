@@ -50,6 +50,12 @@ LearningCubeBlendingFullParam::LearningCubeBlendingFullParam (GLCubeBlendingFull
     connect(m_qGLDepthMask,SIGNAL(switchChanged(bool)),m_glCubeBlendingFullParam,SLOT(switchDepthMask(bool)));
 }
 
+LearningCubeBlendingFullParam::~LearningCubeBlendingFullParam()
+{
+  delete m_glCubeBlendingFullParam;
+}
+
+
 QString LearningCubeBlendingFullParam::getName() const
 {
     QString name;

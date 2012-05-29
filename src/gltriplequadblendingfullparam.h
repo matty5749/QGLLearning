@@ -14,7 +14,7 @@ private:
     Quad* m_quad3;
 public:
     GLTripleQuadBlendingFullParam ( QWidget* parent = 0 );
-
+    ~GLTripleQuadBlendingFullParam ();
 private:
     virtual void draw();
     friend class LearningTripleQuadBlendingFullParam;

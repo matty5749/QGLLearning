@@ -55,6 +55,12 @@ Quad::Quad(GLfloat r, GLfloat g, GLfloat b, GLfloat a, Vertex* one, Vertex* two,
     connect(m_four,SIGNAL(vertexChanged()),this,SLOT(change()));
 }
 
+Quad::~Quad()
+{
+   
+}
+
+
 void Quad::drawFigure()
 {
     if (!m_noCullFace) cullFace();

@@ -23,6 +23,14 @@ GLTripleQuadBlendingFullParam::GLTripleQuadBlendingFullParam(QWidget* parent): G
     m_quad3 = new Quad(0.0, 0.99, 0.0, 0.5, nine, ten, eleven, twelve);
 }
 
+GLTripleQuadBlendingFullParam::~GLTripleQuadBlendingFullParam()
+{
+  delete m_quad1;
+  delete m_quad2;
+  delete m_quad3;
+}
+
+
 void GLTripleQuadBlendingFullParam::draw()
 {
     glMatrixMode(GL_MODELVIEW);

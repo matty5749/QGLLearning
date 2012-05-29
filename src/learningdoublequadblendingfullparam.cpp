@@ -34,6 +34,12 @@ LearningDoubleQuadBlendingFullParam::LearningDoubleQuadBlendingFullParam (GLDoub
     connect(m_glDoubleQuadBlendingFullParam->m_quad2,SIGNAL(quadChanged()),m_glDoubleQuadBlendingFullParam,SLOT(update()));
 }
 
+LearningDoubleQuadBlendingFullParam::~LearningDoubleQuadBlendingFullParam()
+{
+  delete m_glDoubleQuadBlendingFullParam;
+}
+
+
 QString LearningDoubleQuadBlendingFullParam::getName() const
 {
     QString name;

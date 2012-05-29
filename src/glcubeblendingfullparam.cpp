@@ -13,9 +13,12 @@
 GLCubeBlendingFullParam::GLCubeBlendingFullParam(QWidget* parent): GLWidget(parent)
 {
     Vertex* base = new Vertex(-1, -1, 1);
-
-    
     m_cube = new Cube(base, 2.0, false);
+}
+
+GLCubeBlendingFullParam::~GLCubeBlendingFullParam()
+{
+ delete m_cube;
 }
 
 void GLCubeBlendingFullParam::draw()

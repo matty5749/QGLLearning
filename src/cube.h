@@ -21,6 +21,16 @@ class LearningCubeBlendingFullParam;
 class Cube : public Figure
 {
 private:
+  
+    Vertex *m_one;
+    Vertex *m_two;
+    Vertex *m_three;
+    Vertex *m_four;
+    Vertex *m_five;
+    Vertex *m_six;
+    Vertex *m_seven;
+    Vertex *m_eight;
+  
     Quad *m_front;
     Quad *m_back;
     Quad *m_left;;
@@ -31,6 +41,7 @@ private:
 public:
 
     Cube(Vertex* base, GLfloat size, bool lessParam);
+    ~Cube();
     virtual void drawFigure();
     virtual QDialog* getDialogCode();
     

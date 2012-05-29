@@ -35,6 +35,7 @@ public:
     Color4f* m_backgroundColor;
 public:
     GLWidget(QWidget *parent = 0);
+    ~GLWidget();
     /**
       * \fn virtual void draw()=0;
       * \brief Dessine entierement la scene

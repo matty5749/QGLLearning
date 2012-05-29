@@ -37,6 +37,15 @@ QGLClearColor::QGLClearColor(Color4f* color, QWidget* parent): QGLFunction4f(par
     connect(m_color,SIGNAL(colorChanged()),this,SLOT(changeBackgroungColor()));
 }
 
+QGLClearColor::~QGLClearColor()
+{
+  /*
+  delete m_color;
+  m_color=NULL;
+  */
+}
+
+
 void QGLClearColor::changeBackgroungColor()
 {
   emit qGLClearColorChanged();

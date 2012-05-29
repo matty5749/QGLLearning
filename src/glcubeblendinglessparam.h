@@ -22,7 +22,7 @@ private:
     Cube *m_cube;
 public:
     GLCubeBlendingLessParam ( QWidget* parent = 0 );
-
+    ~GLCubeBlendingLessParam();
 private:
     virtual void draw();
     friend class LearningCubeBlendingLessParam;

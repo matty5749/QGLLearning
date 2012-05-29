@@ -24,7 +24,7 @@ private:
     Quad* m_quad2;
 public:
     GLDoubleQuadBlendingFullParam(QWidget* parent = 0);
-
+    ~GLDoubleQuadBlendingFullParam();
 private:
     virtual void draw();
     friend class LearningDoubleQuadBlendingFullParam;
