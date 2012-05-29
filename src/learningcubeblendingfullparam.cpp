@@ -8,6 +8,8 @@
 #include "glcubeblendingfullparam.h"
 #include "quad.h"
 #include "qgldepthmask.h"
+#include "qglclearcolor.h"
+
 /**
  *\fn LearningCubeBlendingFullParam::LearningCubeBlendingFullParam(QWidget* parent)
  *\brief Construction des widgets necessaire à la relation avec la modelisation GLCubeBlendingFullParam
@@ -19,7 +21,9 @@ LearningCubeBlendingFullParam::LearningCubeBlendingFullParam (GLCubeBlendingFull
 
     m_glCubeBlendingFullParam=new GLCubeBlendingFullParam;
     m_splitter->addWidget(m_glCubeBlendingFullParam);
-
+    
+    m_qGLClearColor=new QGLClearColor(m_glCubeBlendingFullParam->m_backgroundColor);
+    m_vBox->addWidget(m_qGLClearColor);
     m_vBox->addWidget(m_glCubeBlendingFullParam->m_cube->m_front->getDialogCode());
     m_vBox->addWidget(m_glCubeBlendingFullParam->m_cube->m_back->getDialogCode());
     m_vBox->addWidget(m_glCubeBlendingFullParam->m_cube->m_left->getDialogCode());
@@ -35,6 +39,7 @@ LearningCubeBlendingFullParam::LearningCubeBlendingFullParam (GLCubeBlendingFull
 
     m_blocCode->setWidget(m_conteneur);
 
+    connect(m_qGLClearColor,SIGNAL(qGLClearColorChanged()),m_glCubeBlendingFullParam,SLOT(update()));
     //CONNECTION QUAD
     connect(m_glCubeBlendingFullParam->m_cube->m_front,SIGNAL(quadChanged()),m_glCubeBlendingFullParam,SLOT(update()));
     connect(m_glCubeBlendingFullParam->m_cube->m_back,SIGNAL(quadChanged()),m_glCubeBlendingFullParam,SLOT(update()));

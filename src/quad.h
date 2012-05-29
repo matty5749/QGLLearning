@@ -56,6 +56,7 @@ signals:
     void quadChanged();
 
     friend class Cube;
+    friend class LearningQuadBlending;
     friend class LearningDoubleQuadBlendingLessParam;
     friend class LearningDoubleQuadBlendingFullParam;
     friend class LearningTripleQuadBlendingLessParam;

@@ -5,6 +5,7 @@
  */
 #include <iostream>
 #include "learningmanager.h"
+#include "learningquadblending.h"
 #include "learningdoublequadblendinglessparam.h"
 #include "learningdoublequadblendingfullparam.h"
 #include "learningtriplequadblendinglessparam.h"
@@ -25,6 +26,7 @@ LearningManager::LearningManager(QDockWidget* dockWidget , QWidget* parent): QWi
     m_mainLayout=new QHBoxLayout(this);
 
     /* Creation des themes */
+    m_learningQuadBlending=new LearningQuadBlending;
     m_learningDoubleQuadBlendingLessParam=new LearningDoubleQuadBlendingLessParam;
     m_learningDoubleQuadBlendingFulParam=new LearningDoubleQuadBlendingFullParam;
     m_learningTripleQuadBlendingLessParam=new LearningTripleQuadBlendingLessParam;
@@ -33,6 +35,7 @@ LearningManager::LearningManager(QDockWidget* dockWidget , QWidget* parent): QWi
     m_learningCubeBlendingFullParam=new LearningCubeBlendingFullParam;
     
     /* Enregistrement des themes dans le vecteur */
+    m_learningVector.append(m_learningQuadBlending);
     m_learningVector.append(m_learningDoubleQuadBlendingLessParam);
     m_learningVector.append(m_learningDoubleQuadBlendingFulParam);
     m_learningVector.append(m_learningTripleQuadBlendingLessParam);

@@ -31,7 +31,7 @@ Cube::Cube(Vertex* base, GLfloat size, bool lessParam):Figure(1,1,1,1)
 
     if (lessParam)
     {
-        m_front = new Quad(0.8,0.4,0.2,1.0, m_one, m_two, m_three, m_four, true);
+        m_front = new Quad(0.8,0.4,0.2,0.5, m_one, m_two, m_three, m_four, true);
         m_back = new Quad(0.2,0.4,0.8,0.5, m_five, m_six, m_seven, m_eight, false, false, false, false);
         m_left = new Quad(0.8,0.2,0.4,0.5, m_one, m_four, m_six ,m_five, false, false, false, false);
         m_right = new Quad(0.2,0.8,0.4,0.5, m_two, m_eight, m_seven, m_three, false, false, false, false);
@@ -40,7 +40,7 @@ Cube::Cube(Vertex* base, GLfloat size, bool lessParam):Figure(1,1,1,1)
     }
     else
     {
-        m_front = new Quad(0.8,0.4,0.2,1.0, m_one, m_two, m_three, m_four, true);
+        m_front = new Quad(0.8,0.4,0.2,0.5, m_one, m_two, m_three, m_four, true);
         m_back = new Quad(0.2,0.4,0.8,0.5, m_five, m_six, m_seven, m_eight, true);
         m_left = new Quad(0.8,0.2,0.4,0.5, m_one, m_four, m_six ,m_five, true);
         m_right = new Quad(0.2,0.8,0.4,0.5, m_two, m_eight, m_seven, m_three, true);

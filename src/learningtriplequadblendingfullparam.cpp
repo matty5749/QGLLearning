@@ -6,6 +6,7 @@
 
 #include "learningtriplequadblendingfullparam.h"
 #include "gltriplequadblendingfullparam.h"
+#include "qglclearcolor.h"
 
 /**
  *\fn LearningTripleQuadBlendingFullParam::LearningTripleQuadBlendingFullParam(QWidget* parent, Qt::WindowFlags f, GLTripleQuadBlendingFullParam* modelisation)
@@ -18,7 +19,8 @@ LearningTripleQuadBlendingFullParam::LearningTripleQuadBlendingFullParam(QWidget
     m_glTripleQuadBlendingFullParam=new GLTripleQuadBlendingFullParam;
     m_splitter->addWidget(m_glTripleQuadBlendingFullParam);
 
-
+    m_qGLClearColor=new QGLClearColor(m_glTripleQuadBlendingFullParam->m_backgroundColor);
+    m_vBox->addWidget(m_qGLClearColor);
     m_vBox->addWidget(m_glTripleQuadBlendingFullParam->m_quad1->getDialogCode());
     m_vBox->addWidget(m_glTripleQuadBlendingFullParam->m_quad2->getDialogCode());
     m_vBox->addWidget(m_glTripleQuadBlendingFullParam->m_quad3->getDialogCode());
@@ -26,6 +28,7 @@ LearningTripleQuadBlendingFullParam::LearningTripleQuadBlendingFullParam(QWidget
 
     m_blocCode->setWidget(m_conteneur);
 
+    connect(m_qGLClearColor,SIGNAL(qGLClearColorChanged()),m_glTripleQuadBlendingFullParam,SLOT(update()));
     //CONNECTION QUAD
     connect(m_glTripleQuadBlendingFullParam->m_quad1,SIGNAL(quadChanged()),m_glTripleQuadBlendingFullParam,SLOT(update()));
     connect(m_glTripleQuadBlendingFullParam->m_quad2,SIGNAL(quadChanged()),m_glTripleQuadBlendingFullParam,SLOT(update()));

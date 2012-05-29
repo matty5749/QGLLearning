@@ -44,7 +44,6 @@ void GLDoubleQuadBlendingLessParam::draw()
     glRotatef(rotationY, 0.0, 1.0, 0.0);
     glRotatef(rotationZ, 0.0, 0.0, 1.0);
 
-    //glDepthMask(GL_FALSE);//Tampon de profondeur activé en lecture seule, a pour effet de fusionner les couleurs des quads au lieu de remplacer les valeurs dans le tampon
     //MODELISATION
     m_quad1->drawFigure();
     m_quad2->drawFigure();
