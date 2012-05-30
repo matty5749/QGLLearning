@@ -8,6 +8,7 @@
 #include <QLabel>
 #include <QDoubleSpinBox>
 #include "vertex.h"
+#include <qt4/Qt/qspinbox.h>
 
 QGLVertex3f::QGLVertex3f( Vertex* vertex , QWidget* parent): QGLFunction3f(parent),m_vertex(vertex)
 {
@@ -15,6 +16,10 @@ QGLVertex3f::QGLVertex3f( Vertex* vertex , QWidget* parent): QGLFunction3f(paren
     m_spin1->setValue(m_vertex->getX());
     m_spin2->setValue(m_vertex->getY());
     m_spin3->setValue(m_vertex->getZ());
+    
+    m_spin1->setPalette(QPalette(Qt::white));
+    m_spin2->setPalette(QPalette(Qt::white));
+    m_spin3->setPalette(QPalette(Qt::white));
 
     connect(m_spin1,SIGNAL(valueChanged(double)),m_vertex,SLOT(changeX(double)));
     connect(m_spin2,SIGNAL(valueChanged(double)),m_vertex,SLOT(changeY(double)));

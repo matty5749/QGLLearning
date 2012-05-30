@@ -8,6 +8,7 @@
 #include <QDoubleSpinBox>
 #include <QHBoxLayout>
 #include <QLabel>
+#include <qt4/Qt/qcolor.h>
 
 QGLFunction4f::QGLFunction4f(QWidget* parent): QGLFunction(parent)
 {
@@ -26,6 +27,11 @@ QGLFunction4f::QGLFunction4f(QWidget* parent): QGLFunction(parent)
     m_spin2=new QSpinBox(this);
     m_spin3=new QSpinBox(this);
     m_spin4=new QSpinBox(this);
+    
+    m_spin1->setPalette(QPalette(Qt::white));
+    m_spin2->setPalette(QPalette(Qt::white));
+    m_spin3->setPalette(QPalette(Qt::white));
+    m_spin4->setPalette(QPalette(Qt::white));
 
     m_spin1->setButtonSymbols(QAbstractSpinBox::PlusMinus);
     m_spin2->setButtonSymbols(QAbstractSpinBox::PlusMinus);
