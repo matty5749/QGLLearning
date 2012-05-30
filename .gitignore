@@ -5,3 +5,4 @@ doxygen/html/*
 src/*.*~
 *.odp
 *.odt
+*.pdf
